@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page de Paiement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f3f3f3;
+        }
+        .payment-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        .payment-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <h2>Paiement Sécurisé</h2>
+        <form action="/process_payment" method="POST">
+            <div class="form-group">
+                <label for="name">Nom sur la carte</label>
+                <input type="text" id="name" name="name" placeholder="Ex. Jean Dupont" required>
+            </div>
+            <div class="form-group">
+                <label for="card-number">Numéro de carte</label>
+                <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required>
+            </div>
+            <div class="form-group">
+                <label for="expiry-date">Date d'expiration</label>
+                <input type="month" id="expiry-date" name="expiry-date" required>
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV</label>
+                <input type="password" id="cvv" name="cvv" placeholder="123" required>
+            </div>
+            <button type="submit" class="submit-btn">Payer</button>
+        </form>
+    </div>
+</body>
+</html>
